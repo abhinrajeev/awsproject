@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile & Academic Performance</title>
+
+    <script src="jquery.min.js"></script>
+    <script src="jquery.validate.min.js"></script>
+	<script src="stud.js"></script>
+	
+	<link href="stud.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <h1>Student Profile & Academic Performance</h1>
+    <p>Student Portal</p>
+</header>
+
+<nav>
+    <a href="#pro">Profile</a>
+    <a href="#reg">Registration</a>
+    <a href="#performance">Performance</a>
+    <a href="#multimedia">Multimedia</a>
+</nav>
+
+<main>
+
+    <section id="pro">
+        <h2>Student Profile</h2>
+		<div class="profile">
+			<div class="profile-info">
+				<h3>Abhin Rajeev</h3>
+
+				<p>
+					<strong>Educational Qualifications:</strong>
+				</p>
+
+				<ul>
+					<li>Integrated Masters of Computer Application (IMCA)</li>
+				</ul>
+
+				<p>
+					<strong>Hobbies and Interests:</strong>
+				</p>
+
+				<ul>
+					<li>Web Development</li>
+					<li>Listening Music</li>
+					<li>Proghramming</li>
+				</ul>
+
+				<p>
+					<strong>Contact:</strong>
+					<a href="mailto:abhinr40@gmail.com">abhinr40@gmail.com</a>
+				</p>
+
+				<p>
+					<strong>Phone:</strong>
+					<a href="tel:+916238522721">+91 6238522721</a>
+				</p>
+			</div>
+			
+			<div class="profile-photo">
+				<img src="profile.jpg" alt="Student Photo">
+			</div>
+		</div>
+    </section>
+	
+	<section>
+		<div class="jquery">
+			<button id="changeBtn" type="button" class="btn">
+				Change Text Color
+			</button>
+			<button id="hideBtn" type="button" class="btn">
+				Hide/show Details
+			</button>
+		</div>
+	</section>
+
+
+    <section id="reg">
+        <h2>Student Registration</h2>
+
+        <form id="regForm">
+
+            <table  cellpadding="20">
+
+				<tr>
+					<th><label>Student Name :</label></th>
+					<th><input  type="text" name="name"  placeholder="Enter Name"></th>
+				</tr>
+				
+				<tr>
+					<th><label>Email :</label></th>
+					<th><input  type="Email" name="mail" class="textbox" placeholder="Enter email"></th>
+				</tr>
+			
+                <tr>
+					<th><label>Gender :</label></th>
+					<th>
+						Male<input type="radio" name="sex" value="m">
+						&nbsp&nbsp
+						Female<input type="radio" name="sex" value="f">
+						&nbsp&nbsp
+						Other<input type="radio" name="sex" value="ot">
+					</th>
+				</tr>
+				
+				<tr>
+					<th><label>Course :</label></th>
+					<th>
+						<select name="course" class="textbox">
+							<option value="">Select Qualification</option>
+							<option value="BCA">MCA</option>
+							<option value="BSc">B.Sc</option>
+							<option value="BCom">B.Com</option>
+							<option value="BA">B.A</option>
+							<option value="BTech">B.Tech</option>
+						</select>
+					</th>
+				</tr>
+
+				<tr>
+					<th><label>Hobbies :</label></th>
+					<th>
+						<input type="checkbox" name="hobbies[]" value="Reading">Reading
+						<input type="checkbox" name="hobbies[]" value="Sports">Sports
+						<input type="checkbox" name="hobbies[]" value="Music">Music
+						<input type="checkbox" name="hobbies[]" value="Photography">Web Designing
+					</th>
+				</tr>
+
+				<tr>
+					<th><label>Date of Birth :</label></th>
+					<th><input  type="date" name="date"required></th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" name="sub" value="Register">
+					</td>
+				</tr>
+			</table>
+        </form>
+    </section>
+	
+	<section>
+		<div class="jquery">
+			<button id="slideBtn" type="button" class="btn">
+				Slide details
+			</button>
+		</div>
+	</section>
+
+    <section id="performance">
+        <h2>Academic Performance</h2>
+
+		 <form id="marksForm">
+
+			<table cellpadding="10">
+
+				<tr>
+					<th>
+						<label>Student Name</label>
+					</th>
+					<td>
+						<input type="text" id="marksName" placeholder="Enter student name" required >
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<label >Register Number</label>
+					</th>
+					<td>
+						<input type="text" id="registerNo" placeholder="Enter register number" required >
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<label>Subject 1 Marks</label>
+					</th>
+					<td>
+						<input type="number" id="sub1" placeholder="0 - 100" required >
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<label>Subject 2 Marks</label>
+					</th>
+					<td>
+						<input type="number" id="sub2" placeholder="0 - 100" required >
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<label>Subject 3 Marks</label>
+					</th>
+					<td>
+						<input type="number" id="sub3" placeholder="0 - 100" required >
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2" style="text-align:center;">
+						<button type="submit">Calculate Result</button>
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+
+        <div class="result">
+            <p>
+                <strong>Student:</strong>
+                <span id="sName"></span>
+            </p>
+
+            <p>
+                <strong>Register Number:</strong>
+                <span id="Registerno"></span>
+            </p>
+
+            <p>
+                <strong>Total Marks:</strong>
+                <span id="tMarks"></span>
+            </p>
+
+            <p>
+                <strong>Average Marks:</strong>
+                <span id="avgMarks"></span>
+            </p>
+
+            <p>
+                <strong>Grade:</strong>
+                <span id="grade" class="grade"></span>
+            </p>
+        </div>
+    </section>
+	
+
+    <section id="multimedia">
+        <h2>Multimedia</h2>
+
+        <video controls>
+            <source src="KALYANI.mp4" type="video/mp4">
+        </video>
+    </section>
+	
+	<section>
+		<div class="jquery">
+			<button id="fadeBtn" type="button">
+				Fade Multimedia
+			</button>
+		</div>
+	</section>
+
+</main>
+
+<footer>
+    <p>2026 Student Portal | Academic Performance</p>
+</footer>
+
+
+</body>
+</html>
